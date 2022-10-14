@@ -1,0 +1,25 @@
+{
+  "name": "playwright_project_with_ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shaharislam/Playwright_Project_With_TS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shaharislam/Playwright_Project_With_TS/issues"
+  },
+  "homepage": "https://github.com/Shaharislam/Playwright_Project_With_TS#readme",
+  "dependencies": {
+    "@playwright/test": "^1.27.1"
+  }
+}
