@@ -38,7 +38,7 @@ test.skip( 'Selectors', async ({page})  => {
    //Xpath
    await page.click('//button')
 })
-test( 'Working with Input', async ({page})  => {
+test( 'Working with Input @tag', async ({page})  => {
    //Here goes the test code
    await page.goto('http://zero.webappsecurity.com')
    await page.click('#signin_button');   // Id selector
@@ -50,7 +50,10 @@ test( 'Working with Input', async ({page})  => {
    await expect(errorMessage).toContainText('Login and/or password are wrong')
 })
 
-test( 'Assertions', async ({page})  => {
+//Add Specail Tag
+// run command with special tag npx playwright test --grep @tag-name
+// run command ignor special tag npx playwright test --grep-invert @tag-name
+test( 'Assertions @tag', async ({page})  => {
    //Here goes the test code
    await page.goto('https://example.com/')
    await expect(page).toHaveURL('https://example.com/') // URl Assertions
