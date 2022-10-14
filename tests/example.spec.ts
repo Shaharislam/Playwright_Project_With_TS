@@ -1,5 +1,4 @@
 import{ test, expect } from '@playwright/test'
-import exp from 'constants'
 
 test( 'Simple basic test', async ({page})  => {
    //Here goes the test code
@@ -7,6 +6,9 @@ test( 'Simple basic test', async ({page})  => {
    const pageTitle = await page.locator('h1')
    await expect(pageTitle).toContainText('Example Domain')
 })
+
+//describe Annotation doesn't support async method
+test.describe('My First Test Describe', () => {
 
 test( 'Click on Elements', async ({page})  => {
    //Here goes the test code
@@ -17,25 +19,25 @@ test( 'Click on Elements', async ({page})  => {
    const errorMessage = await page.locator('.alert-error');//Class Selector
    await expect(errorMessage).toContainText('Login and/or password are wrong')
 })
+//Add Skip Annotation same Annotation test.only
+test.skip( 'Selectors', async ({page})  => {
+   //text
+   await page.click('text=some text')
 
-// test( 'Selectors', async ({page})  => {
-//    //text
-//    await page.click('text=some text')
+   //css selctor
+   await page.click('button')
+   await page.click('#id')       //id selector
+   await page.click('.class')    //class selector
 
-//    //css selctor
-//    await page.click('button')
-//    await page.click('#id')       //id selector
-//    await page.click('.class')    //class selector
+   //only visible css selector
+   await page.click('.submit-button:visible')
 
-//    //only visible css selector
-//    await page.click('.submit-button:visible')
+   //combinations
+   await page.click('#username .first')
 
-//    //combinations
-//    await page.click('#username .first')
-
-//    //Xpath
-//    await page.click('//button')
-// })
+   //Xpath
+   await page.click('//button')
+})
 test( 'Working with Input', async ({page})  => {
    //Here goes the test code
    await page.goto('http://zero.webappsecurity.com')
@@ -48,7 +50,7 @@ test( 'Working with Input', async ({page})  => {
    await expect(errorMessage).toContainText('Login and/or password are wrong')
 })
 
-test.only( 'Assertions', async ({page})  => {
+test( 'Assertions', async ({page})  => {
    //Here goes the test code
    await page.goto('https://example.com/')
    await expect(page).toHaveURL('https://example.com/') // URl Assertions
@@ -59,7 +61,9 @@ test.only( 'Assertions', async ({page})  => {
   await expect(element).toBeVisible() //Visibility Assertions
   await expect(element).toHaveText('Example Domain') //Text Visibility Assertions
   await expect(element).toHaveCount(1)
-   
+  
   const nonExistingElement = await page.locator('h5')
   await expect(nonExistingElement).not.toBeVisible()
+})
+
 })
