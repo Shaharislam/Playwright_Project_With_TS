@@ -1,4 +1,5 @@
 import{ test, expect } from '@playwright/test'
+import exp from 'constants'
 
 test( 'Simple basic test', async ({page})  => {
    //Here goes the test code
@@ -45,4 +46,20 @@ test( 'Working with Input', async ({page})  => {
 
    const errorMessage = await page.locator('.alert-error');//Class Selector
    await expect(errorMessage).toContainText('Login and/or password are wrong')
+})
+
+test.only( 'Assertions', async ({page})  => {
+   //Here goes the test code
+   await page.goto('https://example.com/')
+   await expect(page).toHaveURL('https://example.com/') // URl Assertions
+   await expect(page).toHaveTitle('Example Domain') // Title Assertions
+
+
+  const element = await page.locator('h1')
+  await expect(element).toBeVisible() //Visibility Assertions
+  await expect(element).toHaveText('Example Domain') //Text Visibility Assertions
+  await expect(element).toHaveCount(1)
+   
+  const nonExistingElement = await page.locator('h5')
+  await expect(nonExistingElement).not.toBeVisible()
 })
