@@ -7,7 +7,7 @@ test.describe('Search Test',() => {
     test.afterEach(async ()=>{
        
     })
-    test.only( 'Search Test Case', async ({page})  => {
+    test( 'Search Test Case', async ({page})  => {
        //Here goes the test code
        await page.type('#searchTerm','Bank');
        await page.keyboard.press('Enter')
