@@ -11,7 +11,8 @@
     "tests:firefox": "playwright test --config=playwright.config.ts --project=Firefox",
     "tests:webkit": "playwright test --config=playwright.config.ts --project=Webkit",
     "tests:special_tag": "playwright test --config=playwright.config.ts --project=Firefox --grep=@Tag_Name",
-    "tests:All": "playwright test --config=playwright.config.ts --project=all --grep=@Tag_Name"
+    "tests:All": "playwright test --config=playwright.config.ts --project=all --grep=@Tag_Name",
+    "tests:e2e": "playwright test --config=e2e.config.ts --project=Chromium"
   },
   "repository": {
     "type": "git",
