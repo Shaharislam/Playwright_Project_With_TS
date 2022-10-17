@@ -1,4 +1,5 @@
 import{ test, expect } from '@playwright/test'
+import { landHomepage,assertTitle } from '../helpers'
 
 test( 'Simple basic test', async ({page})  => {
    //Here goes the test code
@@ -58,7 +59,6 @@ test( 'Assertions @tag', async ({page})  => {
    await page.goto('https://example.com/')
    await expect(page).toHaveURL('https://example.com/') // URl Assertions
    await expect(page).toHaveTitle('Example Domain') // Title Assertions
-
 
   const element = await page.locator('h1')
   await expect(element).toBeVisible() //Visibility Assertions
@@ -125,7 +125,7 @@ test.describe('Hook Add',() => {
      // await page.goto('http://zero.webappsecurity.com')
       await page.click('#signin_button');   // Id selector
       await page.type('#user_login','some txt');
-      await page.type('#user_password','some password');
+      await page.type('#user_passwor','some password');
       await page.click('text=Sign in');
    
       const errorMessage = await page.locator('.alert-error');//Class Selector
@@ -134,4 +134,10 @@ test.describe('Hook Add',() => {
       //SingleLine ScreenShot Command
       await errorMessage.screenshot({path:'Singlescreenshot.jpg'})
    })
+})
+// Run Command with browser 'npm run tests:webkit -- --headed'
+test.only( 'Custom function test', async ({page})  => {
+   //Here goes the test code
+   await landHomepage(page)
+   await assertTitle(page)
 })
