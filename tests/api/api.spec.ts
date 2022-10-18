@@ -61,6 +61,10 @@ test.describe.parallel.only('API Testing',()=>{
         expect(responseBody.error).toBe('Missing password')
     })
 
+    test('Delete Request - User Deleted',async({request})=>{
+        const response = await request.delete(`${(baseUrl)}/user/2`)
+        expect(response.status()).toBe(204)
+
     test('PUT Request - Update User',async({request})=>{
         const response = await request.put(`${(baseUrl)}/user/2`,{
         data:{
@@ -73,5 +77,6 @@ test.describe.parallel.only('API Testing',()=>{
         expect(responseBody.name).toBe('new name')
         expect(responseBody.job).toBe('new job')
         expect(responseBody.updatedAt).toBeTruthy()
+
     })
 })
