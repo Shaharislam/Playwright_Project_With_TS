@@ -17,12 +17,10 @@ test.describe('Filter Transactions',() => {
     test.afterEach(async ()=>{
        
     })
-    // test('user login', async({page})=>{
 
-    // })
+
     test( 'Verify Filter Transactions', async ({page})  => {
        //Here goes the test code
-        page.waitForNavigation({ url: 'http://zero.webappsecurity.com/bank/account-activity.html' });
         await page.click('#account_activity_link')
         await page.selectOption('#aa_accountId','2')
         const checkingAccount = await page.locator('#all_transactions_for_account tbody tr')

@@ -1,4 +1,4 @@
-import { expect, Locator, Page, PlaywrightTestConfig } from "@playwright/test";
+import { expect, Locator, Page } from "@playwright/test";
 
 export class PaymentPage{
     //Define Selectors

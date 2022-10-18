@@ -1,4 +1,4 @@
-import { expect, Locator, Page, PlaywrightTestConfig } from "@playwright/test";
+import { expect, Locator, Page } from "@playwright/test";
 
 export class FeedBackPage{
     //Define Selectors
@@ -26,7 +26,7 @@ export class FeedBackPage{
         
     }
 
-    //Define login page Methods
+    //Define  Methods
     async fillForm(
         name:string,
         email:string,
