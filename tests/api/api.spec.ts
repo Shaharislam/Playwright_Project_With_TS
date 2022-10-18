@@ -1,6 +1,6 @@
 import{test,expect} from '@playwright/test'
 
-test.describe.parallel('API Testing',()=>{
+test.describe.parallel.only('API Testing',()=>{
     const baseUrl= 'https://reqres.in/api'
 
     test('Simple API Testing',async({request})=>{
@@ -44,7 +44,6 @@ test.describe.parallel('API Testing',()=>{
        })
    
         const responseBody = JSON.parse(await response.text())
-
         expect(response.status()).toBe(200)
         expect(responseBody.token).toBeTruthy()
     })
@@ -63,8 +62,21 @@ test.describe.parallel('API Testing',()=>{
     })
 
     test('Delete Request - User Deleted',async({request})=>{
-        const response = await request.put(`${(baseUrl)}/user/2`)
+        const response = await request.delete(`${(baseUrl)}/user/2`)
         expect(response.status()).toBe(204)
+
+    test('PUT Request - Update User',async({request})=>{
+        const response = await request.put(`${(baseUrl)}/user/2`,{
+        data:{
+            name:'new name',
+            job: 'new job',
+        },
+       })
+        const responseBody = JSON.parse(await response.text())
+        expect(response.status()).toBe(200)
+        expect(responseBody.name).toBe('new name')
+        expect(responseBody.job).toBe('new job')
+        expect(responseBody.updatedAt).toBeTruthy()
 
     })
 })
