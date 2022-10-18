@@ -4,7 +4,7 @@ import{HomePage} from '../../page-objects/HomePage'
 import{PaymentPage} from '../../page-objects/PaymentPage'
 import{NavBar} from '../../page-objects/components/NavBar'
 
-test.describe.only('New Payment',() => {
+test.describe('New Payment',() => {
    let loginPage:LoginPage
    let  homePage:HomePage
    let  payMentPage:PaymentPage
