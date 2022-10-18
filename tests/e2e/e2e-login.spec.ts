@@ -18,7 +18,7 @@ test.describe.parallel('Login/LogOut Flow',() => {
        //Here goes the test code
        await homePage.clickOnSignIn()
        await loginPage.login("Invalid Username",'Invalid Password')
-    
+       await loginPage.wait(3000)
        await loginPage.assertErrorMessage()
        //FullPage ScreenShot command
        await page.screenshot({path:'screenshot.jpg',fullPage:true})
