@@ -18,7 +18,6 @@ test.describe.parallel('Login/LogOut Flow',() => {
        //Here goes the test code
        await homePage.clickOnSignIn()
        await loginPage.login("Invalid Username",'Invalid Password')
-       await loginPage.wait(3000)
        await loginPage.assertErrorMessage()
        //FullPage ScreenShot command
        await page.screenshot({path:'screenshot.jpg',fullPage:true})
@@ -27,8 +26,9 @@ test.describe.parallel('Login/LogOut Flow',() => {
     test( 'Positive Scenario for Login-LogOut', async ({page})  => {
        //Here goes the test code
        await homePage.clickOnSignIn()
-        await loginPage.login("username",'password')
-
+       await loginPage.login('username','password')
+       //await loginPage.wait(9000)
+       await page.goto("http://zero.webappsecurity.com/bank/account-summary.html")
        const accountSummaryTab = await page.locator('#account_summary_tab');
        await expect(accountSummaryTab).toBeVisible()
        
