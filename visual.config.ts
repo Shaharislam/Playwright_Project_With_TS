@@ -1,16 +1,17 @@
 import { PlaywrightTestConfig } from "@playwright/test";
 
-const e2econfig: PlaywrightTestConfig = {
+const config: PlaywrightTestConfig = {
     timeout:6000,
     retries:0,
-    testDir: 'tests/e2e',
+    testDir:'tests/visual',
     use:{
-        headless:false,
+        headless:true,
         viewport:{width:1200,height:720},
         actionTimeout:15000,
         ignoreHTTPSErrors:true,
-        video: 'off',
+        video: "off",
         screenshot: 'off',
+        
     },
     projects:[
         {
@@ -28,4 +29,4 @@ const e2econfig: PlaywrightTestConfig = {
     ],
 }
 
-export default e2econfig
+export default config
