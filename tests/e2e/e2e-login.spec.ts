@@ -27,9 +27,6 @@ test.describe.parallel('Login/LogOut Flow',() => {
     test( 'Positive Scenario for Login-LogOut', async ({page})  => {
        //Here goes the test code
        await homePage.clickOnSignIn()
-       //  await page.type('#user_login','some txt');
-       //  await page.type('#user_password','some password');
-       //  await page.click('text=Sign in');
         await loginPage.login("username",'password')
 
        const accountSummaryTab = await page.locator('#account_summary_tab');

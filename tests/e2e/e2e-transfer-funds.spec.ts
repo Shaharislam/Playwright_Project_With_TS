@@ -19,7 +19,6 @@ test.describe('Transfer Funds and Make payments',() => {
     })
     test( 'Transfer Funds', async ({page})  => {
        //Here goes the test code
-    //    await page.goto('http://zero.webappsecurity.com/bank/transfer-funds.html')
        await page.click('#transfer_funds_tab')
        await page.selectOption('#tf_fromAccountId','2')
        await page.selectOption('#tf_toAccountId','3')

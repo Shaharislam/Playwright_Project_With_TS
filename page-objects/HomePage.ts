@@ -1,4 +1,4 @@
-import { expect, Locator, Page, PlaywrightTestConfig } from "@playwright/test";
+import { expect, Locator, Page } from "@playwright/test";
 
 export class HomePage{
     //Define Selectors
@@ -17,7 +17,7 @@ export class HomePage{
 
     }
 
-    //Define login page Methods
+    //Define  Methods
     async visit(){
         await this.page.goto('http://zero.webappsecurity.com')
     }
