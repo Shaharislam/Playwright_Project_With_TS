@@ -1,6 +1,6 @@
 import{test,expect} from '@playwright/test'
 
-test.describe.parallel.only('API Testing',()=>{
+test.describe.parallel('API Testing',()=>{
     const baseUrl= 'https://reqres.in/api'
 
     test('Simple API Testing',async({request})=>{
@@ -65,6 +65,7 @@ test.describe.parallel.only('API Testing',()=>{
         const response = await request.delete(`${(baseUrl)}/user/2`)
         expect(response.status()).toBe(204)
 
+    })
     test('PUT Request - Update User',async({request})=>{
         const response = await request.put(`${(baseUrl)}/user/2`,{
         data:{
