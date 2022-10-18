@@ -61,4 +61,10 @@ test.describe.parallel('API Testing',()=>{
         expect(response.status()).toBe(400)
         expect(responseBody.error).toBe('Missing password')
     })
+
+    test('Delete Request - User Deleted',async({request})=>{
+        const response = await request.put(`${(baseUrl)}/user/2`)
+        expect(response.status()).toBe(204)
+
+    })
 })
