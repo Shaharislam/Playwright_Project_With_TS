@@ -5,6 +5,7 @@ export class HomePage{
     readonly page:Page
     readonly signInButton:Locator
     readonly searchBox:Locator
+    readonly feedBackLink:Locator
 
 
     //Init selector using constructor
@@ -12,6 +13,7 @@ export class HomePage{
         this.page=page
         this.signInButton=page.locator('#signin_button')
         this.searchBox=page.locator('#searchTerm')
+        this.feedBackLink=page.locator('#feedback')
 
     }
 
@@ -27,5 +29,7 @@ export class HomePage{
        await this.page.keyboard.press('Enter')
     }
 
-  
+    async clickOnFeedBackLink(){
+        await this.feedBackLink.click()
+    }
 }
