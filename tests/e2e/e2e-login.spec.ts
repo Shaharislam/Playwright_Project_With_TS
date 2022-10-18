@@ -1,38 +1,40 @@
 import{ test, expect } from '@playwright/test'
+import{LoginPage} from '../../page-objects/LoginPage'
 
-test.describe('Hook Add',() => {
+test.describe.parallel('Login/LogOut Flow',() => {
+   let loginPage:LoginPage
+   //Before Hook
     test.beforeEach(async ({page})=>{
-       await page.goto('http://zero.webappsecurity.com')
+       loginPage=new LoginPage(page)
+
+       await loginPage.visit()
     })
     test.afterEach(async ()=>{
        
     })
     test( 'Applying Before and After hook @hook', async ({page})  => {
        //Here goes the test code
-       //await page.goto('http://zero.webappsecurity.com')
        await page.click('#signin_button');   // Id selector
-       await page.type('#user_login','some txt');
-       await page.type('#user_password','some password');
-       await page.click('text=Sign in');
+       await loginPage.login("Invalid Username",'Invalid Password')
     
-       const errorMessage = await page.locator('.alert-error');//Class Selector
-       await expect(errorMessage).toContainText('Login and/or password are wrong')
+       await loginPage.assertErrorMessage()
        //FullPage ScreenShot command
        await page.screenshot({path:'screenshot.jpg',fullPage:true})
     })
     
-    test( 'Applying hook @hook', async ({page})  => {
+    test( 'Positive Scenario for Login-LogOut', async ({page})  => {
        //Here goes the test code
-      // await page.goto('http://zero.webappsecurity.com')
-       await page.click('#signin_button');   // Id selector
-       await page.type('#user_login','some txt');
-       await page.type('#user_password','some password');
-       await page.click('text=Sign in');
-    
-       const errorMessage = await page.locator('.alert-error');//Class Selector
-       await expect(errorMessage).toContainText('Login and/or password are wrong')
+        await page.click('#signin_button');   // Id selector
+       //  await page.type('#user_login','some txt');
+       //  await page.type('#user_password','some password');
+       //  await page.click('text=Sign in');
+        await loginPage.login("username",'password')
+
+       const accountSummaryTab = await page.locator('#account_summary_tab');
+       await expect(accountSummaryTab).toBeVisible()
        
-       //SingleLine ScreenShot Command
-       await errorMessage.screenshot({path:'Singlescreenshot.jpg'})
-    })
+       await loginPage.logOut()
+       await loginPage.assertLogOut()
+
+       })
  })
