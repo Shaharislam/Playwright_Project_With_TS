@@ -1,4 +1,5 @@
 import{ test, expect } from '@playwright/test'
+import{getRandomNumber} from '../../utils/data-helpers'
 
 test.describe('Tips and Trics Section',()=> {
 
@@ -9,6 +10,8 @@ test.describe('Tips and Trics Section',()=> {
         await page.goto('https://example.com/')
          console.log(testInfo.title)
          console.log(testInfo.expectedStatus)
+         let number= await getRandomNumber()
+         console.log(number)
     })
     test( 'Browser Skip Test Case', async({page,browserName})=>{
         test.skip(browserName==='chromium','Feature Not Ready')
@@ -55,4 +58,7 @@ test.describe('Tips and Trics Section',()=> {
     //npx playwright pdf facebook.com fb.pdf
     //npx playwright pdf wikipedia.org  wiki.pdf
     //npx playwright pdf rootnext.com rootnext.pdf
+
+    //special ScreenShot Command
+    //npx playwright screenshot --device="iPhone 11" --color-scheme=dark --wait-for-timeout=3000 twitter.com twitter-iphone-image.png
 })
