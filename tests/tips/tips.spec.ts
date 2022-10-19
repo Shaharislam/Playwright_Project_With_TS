@@ -1,5 +1,5 @@
 import{ test, expect } from '@playwright/test'
-import{getRandomNumber} from '../../utils/data-helpers'
+import{getRandomNumber,getRandomString} from '../../utils/data-helpers'
 
 test.describe('Tips and Trics Section',()=> {
 
@@ -11,6 +11,8 @@ test.describe('Tips and Trics Section',()=> {
          console.log(testInfo.title)
          console.log(testInfo.expectedStatus)
          let number= await getRandomNumber()
+         let randomString= await getRandomString()
+         console.log(randomString)
          console.log(number)
     })
     test( 'Browser Skip Test Case', async({page,browserName})=>{
