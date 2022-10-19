@@ -1,6 +1,6 @@
 import{ test, expect } from '@playwright/test'
 
-test.describe.only('Tips and Trics Section',()=> {
+test.describe('Tips and Trics Section',()=> {
 
     test.beforeEach(async({page})=>{
 
@@ -18,4 +18,16 @@ test.describe.only('Tips and Trics Section',()=> {
         test.fixme(browserName==='chromium','Feature Not Ready')
         await page.goto('https://example.com/')
     })
+
+    const people =['Juveria','Bristy','Mukta']
+    for(const name of people){
+        test(`Running Test for ${(name)}`, async ({page})=>{
+            await page.goto('http://zero.webappsecurity.com/index.html')
+            await page.type('#searchTerm',`${name}`)
+            //await page.keyboard.press('Enter')
+           await expect('#searchTerm').toContainEqual(`${name}`)
+            await page.waitForTimeout(6000)
+        })
+        
+    }
 })

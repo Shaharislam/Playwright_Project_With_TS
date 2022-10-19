@@ -22,7 +22,8 @@
     "tests:visual:chromium:update": "playwright test --config=visual.config.ts --project=Chromium --update-snaptshots",
     "tests:visual:firefox:update": "playwright test --config=visual.config.ts --project=Firefox --update-snaptshots",
     "tests:api": "playwright test --config=api.config.ts --project=Firefox",
-    "jenkins-server":"java -jar jenkins.war --httpPort=8080 --enable-future-java"
+    "jenkins-server":"java -jar jenkins.war --httpPort=8080 --enable-future-java",
+    "tests:retries":"npx playwright test --config=playwright.config.ts --project=chromium --retries=3"
 
   },
   "repository": {
