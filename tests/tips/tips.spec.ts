@@ -48,4 +48,11 @@ test.describe('Tips and Trics Section',()=> {
         await page3.goto('https://example.com/')
         //await page1.waitForTimeout(6000)
     })
+    //Device Emulation Command
+    //npx playwright open --device="iPhone 11" wikipedia.org
+
+    // Website to PDF command
+    //npx playwright pdf facebook.com fb.pdf
+    //npx playwright pdf wikipedia.org  wiki.pdf
+    //npx playwright pdf rootnext.com rootnext.pdf
 })
