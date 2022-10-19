@@ -63,4 +63,7 @@ test.describe('Tips and Trics Section',()=> {
 
     //special ScreenShot Command
     //npx playwright screenshot --device="iPhone 11" --color-scheme=dark --wait-for-timeout=3000 twitter.com twitter-iphone-image.png
+    
+    //special reporter command
+    //npx playwright test --config=playwright.config.ts --reporter=reporter.ts  --headed --project=firefox
 })
