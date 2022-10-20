@@ -8,3 +8,5 @@
 ## run command  for report (npx playwright test --config=playwright.config.ts --project=firefox --reporter=line)
 ## run command  for report (npx playwright test --config=playwright.config.ts --project=firefox --reporter=list)
 ## run command  for report (npx playwright test --config=playwright.config.ts --project=firefox --reporter=junit)
+Cucumber Install Command
+## run command  for Install Cucumber (npm install playwright chai prettier @cucumber/cucumber cucumber-html-reporter)
