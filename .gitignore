@@ -4,3 +4,5 @@
 *.webm
 *.pdf
 *.json
+**/node_modules
+*.jsom
