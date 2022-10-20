@@ -6,3 +6,4 @@
 *.json
 **/node_modules
 *.jsom
+*login-steps.js

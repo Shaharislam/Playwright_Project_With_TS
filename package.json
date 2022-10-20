@@ -24,7 +24,7 @@
     "tests:api": "playwright test --config=api.config.ts --project=Firefox",
     "jenkins-server": "java -jar jenkins.war --httpPort=8080 --enable-future-java",
     "tests:retries": "npx playwright test --config=playwright.config.ts --project=chromium --retries=3",
-    "tests:cucumber": "./node_modules/.bin/cucumber-js --require cucumber.js --require strp-definitions/**/*.js -f json:cucumber_report.jsom --publish-quiet"
+    "tests:cucumber": "./node_modules/.bin/cucumber-js --require cucumber.js --require step-definitions/**/*.js -f json:cucumber_report.jsom --publish-quiet"
   },
   "repository": {
     "type": "git",
