@@ -8,3 +8,6 @@
 *.jsom
 step-definitions/login-steps.js
 reports/cucumber_report.html
+node_modules/.package-lock.json
+package-lock.json
+package.json
