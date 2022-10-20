@@ -20,3 +20,9 @@ Then('I should see the home page',async function () {
    await loginPage.assertUserIsLogIn()
  });
 
+ When('I fill the login form with {string} and {string}',async function (username, password) {
+        await loginPage.loginFormInvalidCredentials(username,password)
+ });
+ Then('I wait for 3 seconds', async function () {
+      await loginPage.push()
+   });

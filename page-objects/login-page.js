@@ -12,5 +12,13 @@ class LoginPage{
     async assertUserIsLogIn(){
         await page.waitForSelector('.inventory_list')
     }
+    async loginFormInvalidCredentials(username,password){
+        await page.fill('#user-name',username)
+        await page.fill('#password', password)
+        await page.click('#login-button')
+    }
+    async push(){
+        await page.waitForTimeout(3000)
+    }
 }
 module.exports = {LoginPage}
