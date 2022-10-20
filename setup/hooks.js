@@ -7,8 +7,8 @@ BeforeAll(async ()=>{
 })
 
 AfterAll(async ()=>{
-    // console.log('Close Browser')
-    // await global.browser.close()
+    console.log('Close Browser')
+    await global.browser.close()
 })
 
 Before(async ()=>{
@@ -18,7 +18,7 @@ Before(async ()=>{
 })
 
 After(async ()=>{
-    // console.log(' Close context and page')
-    // await global.page.close()
-    // await global.context.close()
+    console.log(' Close context and page')
+    await global.page.close()
+    await global.context.close()
 })
