@@ -10,4 +10,9 @@
 ## run command  for report (npx playwright test --config=playwright.config.ts --project=firefox --reporter=junit)
 Cucumber Install Command
 ## run command  for Install Cucumber (npm install playwright chai prettier @cucumber/cucumber cucumber-html-reporter)
-// npm i @codeceptjs/configure
+CodeCeptJS Inatall Command
+//-->> npm i @codeceptjs/configure
+Page Object Model Install command in CodeceptJS
+//-->> npx codeceptjs gpo
+CodeceptRun command
+//-->> npx codeceptjs run filename.js

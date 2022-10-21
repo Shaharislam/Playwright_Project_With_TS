@@ -1,3 +1,4 @@
+//CodeCeptJS Page
 Feature('example')
 
 Scenario('Should load example.com website Test-01',({I})=>{
