@@ -1,14 +1,9 @@
-# Playwright_Project_With_TS
-# run command (npx playwright test --config=playwright.config.ts --project=webkit)
-# run command (npx playwright test --config=playwright.config.ts --project=chromium)
-# run command (npx playwright test --config=playwright.config.ts --project=firefox)
-
-## run command  for report (npx playwright test --config=playwright.config.ts --project=firefox --reporter=html)
-## run command  for report (npx playwright test --config=playwright.config.ts --project=firefox --reporter=dot)
-## run command  for report (npx playwright test --config=playwright.config.ts --project=firefox --reporter=line)
-## run command  for report (npx playwright test --config=playwright.config.ts --project=firefox --reporter=list)
-## run command  for report (npx playwright test --config=playwright.config.ts --project=firefox --reporter=junit)
+# Playwright_Project 
+Step by Step follow this command
 Cucumber Install Command
+Inatall NodeJs
+Install npm(npm init)
+Install Playwright
 ## run command  for Install Cucumber (npm install playwright chai prettier @cucumber/cucumber cucumber-html-reporter)
 CodeCeptJS Inatall Command
 //-->> npm i @codeceptjs/configure
