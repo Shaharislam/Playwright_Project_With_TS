@@ -28,8 +28,8 @@
     "report": "node reporter.js",
     "test:CodeCeptJs": "codeceptjs run",
     "CodeCeptJ:gpo": "codeceptjs gpo",
-    "scraper":"node scraper.ts",
-    "scraper:loop":"for run in {1..10}; do node scraper.ts; done"
+    "scraper": "node scraper.ts",
+    "scraper:loop": "for run in {1..10}; do node scraper.ts; done"
   },
   "repository": {
     "type": "git",
@@ -47,6 +47,7 @@
     "@playwright/test": "^1.27.1",
     "chai": "^4.3.6",
     "cucumber-html-reporter": "^5.5.0",
-    "playwright": "^1.27.1"
+    "playwright": "^1.27.1",
+    "random-useragent": "^0.5.0"
   }
 }
