@@ -25,7 +25,9 @@
     "jenkins-server": "java -jar jenkins.war --httpPort=8080 --enable-future-java",
     "tests:retries": "npx playwright test --config=playwright.config.ts --project=chromium --retries=3",
     "tests:cucumber": "./node_modules/.bin/cucumber-js --require cucumber.js --require step-definitions/**/*.js -f json:cucumber_report.jsom --publish-quiet",
-    "report": "node reporter.js"
+    "report": "node reporter.js",
+    "test:CodeCeptJs": "codeceptjs run",
+    "CodeCeptJ:gpo": "codeceptjs gpo"
   },
   "repository": {
     "type": "git",
@@ -38,6 +40,7 @@
   },
   "homepage": "https://github.com/Shaharislam/Playwright_Project_With_TS#readme",
   "dependencies": {
+    "@codeceptjs/configure": "^0.10.0",
     "@cucumber/cucumber": "^8.7.0",
     "@playwright/test": "^1.27.1",
     "chai": "^4.3.6",

@@ -1,4 +1,8 @@
-const { setHeadlessWhen, setCommonPlugins } = require('@codeceptjs/configure');
+//CodeCeptJS Page
+const {
+  setHeadlessWhen,
+  setCommonPlugins
+} = require('@codeceptjs/configure');
 // turn on headless mode when running with HEADLESS=true environment variable
 // export HEADLESS=true && npx codeceptjs run
 setHeadlessWhen(process.env.HEADLESS);
@@ -18,7 +22,8 @@ exports.config = {
     }
   },
   include: {
-    I: './steps_file.js'
+    "I": "./steps_file.js",
+    "LogInPage_CodeceptJs": "./pages/LogInPage_CodeceptJs.js"
   },
   name: 'Playwright_Project_With_TS'
 }
